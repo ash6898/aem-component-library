@@ -16,7 +16,6 @@
         <module>core</module>
         <module>ui.apps</module>
         <module>ui.content</module>
-        <module>ui.frontend</module>
     </modules>
 
     <properties>

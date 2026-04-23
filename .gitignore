@@ -1,0 +1,23 @@
+# Maven build output
+target/
+*.jar
+*.war
+*.ear
+
+# Vault working directories
+vault-work/
+
+# IDE
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+*.class
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

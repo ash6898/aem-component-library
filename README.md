@@ -28,9 +28,15 @@ aem-component-library/
 
 ## Components
 
-| Component | Description | Screenshot |
-|-----------|-------------|------------|
-| _Add components here as you build them_ | | |
+| Component | Description | Sling Model |
+|-----------|-------------|-------------|
+| `page` | Base page component — wraps all portfolio pages | — |
+| `header` | Site header with logo and navigation links | `HeaderModel.java` |
+| `hero-banner` | Full-width hero section with name, title, and CTA | `HeroBannerModel.java` |
+| `section-title` | Reusable section heading / subtitle block | — |
+| `project-card` | Card displaying project image, title, description, and links | `ProjectCardModel.java` |
+| `contact-form` | Contact form with client-side validation | — |
+| `footer` | Site footer with social links and copyright | `FooterModel.java` |
 
 ## Getting Started
 
@@ -52,4 +58,4 @@ mvn clean install -PautoInstallSinglePackage
 ## Author
 
 **Aakash Baskaran**  
-[LinkedIn](#) · [Portfolio](#)
+[LinkedIn](https://www.linkedin.com/in/aakashbaskaran/) · [GitHub](https://github.com/ash6898)
