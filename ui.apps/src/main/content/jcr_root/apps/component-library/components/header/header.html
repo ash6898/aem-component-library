@@ -1,0 +1,19 @@
+<header class="site-header" data-sly-use.header="com.aakash.portfolio.core.models.HeaderModel">
+    <link rel="stylesheet" href="/apps/aakash-portfolio/clientlibs/clientlib-site/css/header.css" />
+    <nav class="header-nav">
+        <a href="${header.homePagePath}" class="header-logo">
+            <span>${header.siteName}</span>
+        </a>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+        <label for="menu-toggle" class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="header-nav-list">
+            <sly data-sly-list="${header.navItems}">
+                <li><a href="${item.path}" onclick="document.getElementById('menu-toggle').checked=false">${item.label}</a></li>
+            </sly>
+        </ul>
+    </nav>
+</header>

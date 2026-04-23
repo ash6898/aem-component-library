@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="sling:Page"
+    sling:resourceType="aakash-portfolio/components/page">
+    <jcr:content
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Home"
+        sling:resourceType="aakash-portfolio/components/page">
+        
+        <header
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="aakash-portfolio/components/header"
+            siteName="Aakash Portfolio"
+            homePagePath="/content/aakash-portfolio/home.html">
+            <navItems jcr:primaryType="nt:unstructured">
+                <item1
+                    jcr:primaryType="nt:unstructured"
+                    label="About"
+                    path="/content/aakash-portfolio/home.html#about"/>
+                <item2
+                    jcr:primaryType="nt:unstructured"
+                    label="Projects"
+                    path="/content/aakash-portfolio/home.html#projects"/>
+                <item3
+                    jcr:primaryType="nt:unstructured"
+                    label="Contact"
+                    path="/content/aakash-portfolio/home.html#contact"/>
+            </navItems>
+        </header>
+
+        <hero-banner
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="aakash-portfolio/components/hero-banner"
+            jobTitle="AEM Developer"
+            name="Hello,  my name &lt;br&gt; is Aakash Baskaran"
+            description="I'm an AEM Developer with a slightly unusual background—I've built enterprise content solutions for Fortune 500 clients, coded Android apps for 100,000+ users, and nerded out over data analytics, which means I approach digital experiences with clean architecture, performance optimization, and a healthy obsession with metrics."
+            button1Text="Projects"
+            button2Text="LinkedIn"
+            button1Path="/content/aakash-portfolio/home.html#projects"
+            button2Path="https://www.linkedin.com/in/aakashbaskaran/"
+            imagePath="/content/aakash-portfolio/assets/images/Illustration.png"/>
+
+                <about-title
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="aakash-portfolio/components/section-title"
+            title="About Me"/>
+
+        <about-banner
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="aakash-portfolio/components/hero-banner"
+            description="I'm someone who believes the best solutions come from diverse perspectives—which is why I've intentionally built expertise across enterprise content management, mobile development, and data analytics. I started as an AEM Developer at Accenture building solutions for Fortune 500 clients, then strengthened my component architecture skills developing Android apps for 100,000+ users at Zoho, before deepening my technical foundation with Canadian diplomas in Data Analytics and Big Data. Each experience wasn't a detour—it was deliberate: AEM taught me scalable architecture, mobile dev sharpened my design patterns, and analytics gave me the tools to measure and optimize impact.
+            &lt;br&gt;&lt;br&gt;Now I bring all three together, building AEM solutions that leverage mobile-grade component thinking and data-driven insights. Outside of work, I love strategic thinking (you'll find me playing chess), exploring great stories through movies, series, and anime, and planning to finally learn skating now that I'm in Canada. I'm based in Toronto, actively seeking AEM opportunities where curiosity and technical depth are valued. Let's connect and build something meaningful."
+            styleClass="about-section"
+            button1Text="Resume"
+            button1Path="/content/aakash-portfolio/assets/documents/Aakash_Baskaran_Resume.pdf"
+            button1Download="Aakash_Baskaran_Resume.pdf"
+            imagePath="/content/aakash-portfolio/assets/images/about_img.png"/>
+
+        <projects-title
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="aakash-portfolio/components/section-title"
+            title="Projects"/>
+
+        <project1
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="aakash-portfolio/components/project-card"
+            title="AEM Component Library Portfolio"
+            description="Description: Production-ready portfolio website built using Apache Sling framework to demonstrate enterprise AEM development patterns. Features reusable component architecture with Sling Models, HTL templating, and responsive design.&lt;br&gt;&lt;br&gt;
+            Technologies: Apache Sling • HTL • Sling Models • OSGi • JCR • Maven • JavaScript • CSS3&lt;br&gt;"
+            buttonText="View Project"
+            buttonPath="https://github.com/ash6898/aakash-portfolio"
+            imagePath="/content/aakash-portfolio/assets/images/project1_img.png"/>
+
+        <project2
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="aakash-portfolio/components/project-card"
+            title="Enterprise AEM Solutions - Chubb Insurance"
+            description="Developed custom AEM components and templates for Fortune 500 insurance client at Accenture. Built 15+ reusable components supporting multi-site management, reducing page authoring time by 30%.&lt;br&gt;&lt;br&gt;
+            Technologies: AEM 6.5 • Sling • OSGi • HTL • Touch UI • Java • JCR • REST APIs &lt;br&gt; &lt;br&gt;
+            Note: Proprietary code - Experience detailed on resume only.&lt;br&gt;"
+            buttonText="View Project"
+            buttonPath=""
+            imagePath="/content/aakash-portfolio/assets/images/project2_img.png"/>
+
+        <project3
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="aakash-portfolio/components/project-card"
+            title="Real-Time Communication App (Android)"
+            description="Native Android application serving 100,000+ active users with real-time communication features. Implemented Clean Architecture and MVVM patterns, reducing crash rates by 25%.&lt;br&gt;&lt;br&gt;
+            Technologies: Kotlin • Java • Jetpack Compose • WebRTC • MVVM • Room • Retrofit&lt;br&gt; &lt;br&gt;
+            Note: Proprietary code - Experience detailed on resume only.&lt;br&gt;"
+            buttonText="View Project"
+            buttonPath=""
+            imagePath="/content/aakash-portfolio/assets/images/project3_img.png"/>
+
+        <contact-title
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="aakash-portfolio/components/section-title"
+            title="Contact Me"/>
+
+        <contact-form
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="aakash-portfolio/components/contact-form"
+        />
+
+        <footer
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="aakash-portfolio/components/footer"
+            footerText="© 2024 Aakash Portfolio">
+            <navItems jcr:primaryType="nt:unstructured">
+                <item1
+                    jcr:primaryType="nt:unstructured"
+                    label="LinkedIn"
+                    path="https://www.linkedin.com/in/aakashbaskaran/"
+                    iconPath="/content/aakash-portfolio/assets/icons/linkedin.svg"/>
+                <item2
+                    jcr:primaryType="nt:unstructured"
+                    label="Github"
+                    path="https://github.com/ash6898/"
+                    iconPath="/content/aakash-portfolio/assets/icons/github.svg"/>
+                <item3
+                    jcr:primaryType="nt:unstructured"
+                    label="Email"
+                    path="mailto:aakash.baskaran.1305@gmail.com"
+                    iconPath="/content/aakash-portfolio/assets/icons/email.svg"/>
+            </navItems>
+        </footer>
+    </jcr:content>
+</jcr:root>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head data-sly-use.childContent="jcr:content">
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width,
+  initial-scale=1.0">
+      <title>${childContent.jcr:title @ context='text'}</title>
+      <link rel="stylesheet" href="/apps/aakash-portfolio/clientlibs/clientlib-site/css/site.css"/>        
+  </head>
+  <body>
+        
+    <sly data-sly-resource="${'jcr:content/header' @ resourceType='aakash-portfolio/components/header'}"/>
+
+      <main>
+        <sly data-sly-resource="${'jcr:content/hero-banner' @ resourceType='aakash-portfolio/components/hero-banner'}"/>
+
+        <section class="about-section" id="about">
+          <sly data-sly-resource="${'jcr:content/about-title' @ resourceType='aakash-portfolio/components/section-title'}"/>
+          <sly data-sly-resource="${'jcr:content/about-banner' @ resourceType='aakash-portfolio/components/hero-banner'}"/>
+        </section>
+
+        <section class="projects-section" id="projects">
+          <sly data-sly-resource="${'jcr:content/projects-title' @ resourceType='aakash-portfolio/components/section-title'}"/>
+          <sly data-sly-resource="${'jcr:content/project1' @ resourceType='aakash-portfolio/components/project-card'}"/>
+          <sly data-sly-resource="${'jcr:content/project2' @ resourceType='aakash-portfolio/components/project-card'}"/>
+          <sly data-sly-resource="${'jcr:content/project3' @ resourceType='aakash-portfolio/components/project-card'}"/>
+        </section>
+
+        <section class="contact-section" id="contact">
+          <sly data-sly-resource="${'jcr:content/contact-title' @ resourceType='aakash-portfolio/components/section-title'}"/>
+          <sly data-sly-resource="${'jcr:content/contact-form' @ resourceType='aakash-portfolio/components/contact-form'}"/>
+        </section>
+        
+      </main>
+
+
+    <sly data-sly-resource="${'jcr:content/footer' @ resourceType='aakash-portfolio/components/footer'}"/>
+      
+  </body>
+  </html>

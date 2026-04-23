@@ -1,0 +1,99 @@
+.hero-banner-container {
+    max-width: 75rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    background-color: #F9FAFF;
+    padding: 0 1rem;
+    gap: 3rem;
+}
+
+/* Reversed layout for about section */
+.about-section {
+    flex-direction: row-reverse;
+}
+
+.hero-banner-content {
+    flex: 1;
+    padding: 1.5rem;
+}
+
+.hero-banner-content h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #FDC435;
+}
+
+.hero-banner-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: #25282B;
+    line-height: 1.2;
+}
+
+.hero-banner-content p {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    color: #828282;
+}
+
+.hero-banner-content .btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    font-size: 1.125rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.hero-banner-image {
+    flex: 1;
+    min-height: 400px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#button1 {
+    background-color: #FDC435;
+    color: #25282B;
+    border: 2px solid #FDC435;
+    margin-right: 0.375rem;
+}
+
+#button2 {
+    background-color: #F9FAFF;
+    color: #25282B;
+    border: 2px solid #25282B;
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+    .hero-banner-container {
+        flex-direction: column;
+        padding: 4rem 1.5rem 1.5rem 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .about-section {
+        flex-direction: column;
+        padding-top: 1.5rem;
+    }
+
+    .hero-banner-content {
+        text-align: center;
+        order: 2;
+        padding: 1rem;
+    }
+
+    .hero-banner-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-banner-image {
+        width: 100%;
+        min-height: 15rem;
+        order: 1;
+    }
+}

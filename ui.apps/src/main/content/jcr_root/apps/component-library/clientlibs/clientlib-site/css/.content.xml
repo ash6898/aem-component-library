@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="sling:Folder">
+    <site.css
+        jcr:primaryType="nt:file"/>
+    <footer.css
+        jcr:primaryType="nt:file"/>
+    <header.css
+        jcr:primaryType="nt:file"/>
+    <hero.css
+        jcr:primaryType="nt:file"/>
+    <project-card.css
+        jcr:primaryType="nt:file"/>
+    <section-title.css
+        jcr:primaryType="nt:file"/>
+</jcr:root>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.aem.component.library</groupId>
+    <artifactId>aem-component-library</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>AEM Component Library</name>
+    <description>Reusable AEM components built with Apache Sling</description>
+
+    <modules>
+        <module>core</module>
+        <module>ui.apps</module>
+        <module>ui.content</module>
+        <module>ui.frontend</module>
+    </modules>
+
+    <properties>
+        <aem.host>localhost</aem.host>
+        <aem.port>4502</aem.port>
+        <aem.publish.host>localhost</aem.publish.host>
+        <aem.publish.port>4503</aem.publish.port>
+        <java.version>11</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <aem.version>6.5.0</aem.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.adobe.aem</groupId>
+                <artifactId>uber-jar</artifactId>
+                <version>${aem.version}</version>
+                <classifier>apis</classifier>
+                <scope>provided</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

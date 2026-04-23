@@ -1,0 +1,135 @@
+.site-header {
+    font-family: comfortaa, sans-serif;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    padding: 0 1.5rem 3rem 1.5rem;
+    overflow-x: clip;
+}
+
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.header-logo {
+    color: #25282B;
+    font-size: 1.125rem;
+    text-decoration: none;
+}
+
+.header-nav-list {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.header-nav-list > li {
+    margin-right: 2rem;
+    display: inline-block;
+}
+
+.header-nav-list > li:last-child {
+    margin-right: 0;
+}
+
+.header-nav-list a {
+    color: #25282B;
+    font-size: 1.125rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.header-nav-list a:hover {
+    color: #FDC435;
+}
+
+/* Hamburger menu - hidden on desktop */
+.menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 0.35rem;
+}
+
+.menu-icon span {
+    display: block;
+    width: 1.5rem;
+    height: 2px;
+    background-color: #25282B;
+    transition: all 0.3s;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: flex;
+        z-index: 20;
+    }
+
+    .header-nav-list {
+        position: absolute;
+        top: 100%;
+        right: 1rem;
+        width: auto;
+        min-width: 10rem;
+        background-color: #F9FAFF;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding: 1rem 0;
+        transition: transform 0.3s, opacity 0.3s;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 0.5rem;
+        transform: translateX(150%);
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .menu-toggle:checked ~ .header-nav-list {
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .menu-toggle:checked ~ .menu-icon span:nth-child(1) {
+        transform: rotate(45deg) translate(0.35rem, 0.35rem);
+    }
+
+    .menu-toggle:checked ~ .menu-icon span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle:checked ~ .menu-icon span:nth-child(3) {
+        transform: rotate(-45deg) translate(0.35rem, -0.35rem);
+    }
+
+    .header-nav-list > li {
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .header-nav-list a {
+        font-size: 1rem;
+        display: block;
+        padding: 0.75rem 1.5rem;
+    }
+
+    .header-nav-list a:hover {
+        background-color: #FDC435;
+        color: #25282B;
+    }
+}

@@ -1,0 +1,102 @@
+.projects-card-container {
+    max-width: 65.5rem;
+    padding: 3rem 1rem;
+    margin: 0 auto 4rem auto;  /* Gap between cards */
+    display: flex;
+    align-items: stretch;      /* Content matches image height */
+    background-color: #FFFFFF;
+    border-radius: 5px;
+}
+
+.projects-card-container:last-child {
+    margin-bottom: 0;
+}
+
+/* Even index (0, 2, 4...) = nth-child(odd): Content left, Image right */
+.projects-card-container:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+/* Odd index (1, 3, 5...) = nth-child(even): Image left, Content right */
+.projects-card-container:nth-child(even) {
+    flex-direction: row;
+}
+
+.project-card-content {
+    flex: 1;               /* Takes remaining space after image */
+    padding: 0 4rem 0 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-card-content h2 {
+    font-size: 2.5rem;
+    color: #25282B;
+    margin-bottom: 1rem;
+}
+
+.project-card-content p {
+    font-size: 1.125rem;
+    color: #828282;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.project-card-content .btn {
+    display: inline-block;
+    align-self: flex-start;    /* Prevents stretching to full width */
+    padding: 0.8em 2em;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 50px;       /* Capsule/pill shape */
+    text-decoration: none;
+    font-weight: bold;
+    background-color: #FFFFFF;
+    color: #25282B;
+    border: 2px solid #25282B;
+    transition: background-color 0.3s ease;
+}
+
+.project-card-content .btn:hover {  
+    background-color: #FDC435;
+    border-color: #25282B;
+}
+
+.project-card-image {
+    height: 32.75rem;
+    width: auto;           /* Let image determine width */
+    object-fit: contain;   /* Like background-size: contain */
+    border-radius: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .projects-card-container,
+    .projects-card-container:nth-child(odd),
+    .projects-card-container:nth-child(even) {
+        flex-direction: column;
+        margin: 0 1rem 1.5rem 1rem;
+        padding: 1.5rem;
+        border-bottom: 1px solid #E0E0E0;
+        padding-bottom: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .projects-card-container:last-child {
+        border-bottom: none;
+    }
+
+    .project-card-content,
+    .project-card-image {
+        width: 100%;
+    }
+
+    .project-card-content {
+        padding: 1rem 0;
+    }
+
+    .project-card-image {
+        aspect-ratio: 16/9;
+    }
+}

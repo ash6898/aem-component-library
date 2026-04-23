@@ -1,0 +1,18 @@
+<footer class="site-footer" data-sly-use.footer="com.aakash.portfolio.core.models.FooterModel">
+    <link rel="stylesheet" href="/apps/aakash-portfolio/clientlibs/clientlib-site/css/footer.css"/>
+    <nav class="footer-nav">
+        <ul class="footer-nav-list">
+            <sly data-sly-list="${footer.navItems}">
+                <li>
+                    <a href="${item.path}" target="_blank">
+                        <img src="${item.iconPath}" width="24" height="24" alt="${item.label}">
+                    </a>
+                </li>
+            </sly>
+        </ul>
+    </nav>
+    <!-- Debug Info: ${footer.debugInfo} -->
+    <div class="footer-text">
+        <span>${footer.footerText}</span>
+    </div>
+</footer>
