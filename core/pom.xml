@@ -16,6 +16,7 @@
     <packaging>bundle</packaging>
 
     <name>AEM Component Library - Core</name>
+    <description>Sling Models for the component library. Installed as an OSGi bundle.</description>
 
     <build>
         <plugins>
@@ -25,19 +26,11 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <Embed-Dependency>*;scope=compile;inline=true</Embed-Dependency>
+                        <Bundle-SymbolicName>com.aakash.portfolio.core</Bundle-SymbolicName>
                         <Sling-Model-Packages>com.aakash.portfolio.core.models</Sling-Model-Packages>
                         <_dsannotations>*</_dsannotations>
                         <_metatypeannotations>*</_metatypeannotations>
                     </instructions>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>11</source>
-                    <target>11</target>
                 </configuration>
             </plugin>
         </plugins>
@@ -75,9 +68,21 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.13.2</version>
+            <groupId>com.adobe.aem</groupId>
+            <artifactId>uber-jar</artifactId>
+            <classifier>apis</classifier>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.wcm</groupId>
+            <artifactId>io.wcm.testing.aem-mock.junit5</artifactId>
+            <version>5.7.4</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.11.4</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

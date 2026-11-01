@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
       e.preventDefault();
 
       const submitBtn = form.querySelector('button[type="submit"]');
+      const originalLabel = submitBtn.textContent;
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending...';
 
@@ -25,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       } catch (error) {
         submitBtn.disabled = false;
-        submitBtn.textContent = 'Send';
+        submitBtn.textContent = originalLabel;
         alert('Something went wrong. Please try again.');
       }
     });

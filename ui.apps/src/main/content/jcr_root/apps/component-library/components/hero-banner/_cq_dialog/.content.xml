@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Hero Banner"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <text
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Text"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <jobTitle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Eyebrow"
+                                name="./jobTitle"/>
+                            <name
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldLabel="Heading"
+                                fieldDescription="Rendered as HTML so a br tag can break the heading."
+                                name="./name"/>
+                            <description
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                fieldLabel="Description"
+                                name="./description"
+                                useFixedInlineToolbar="{Boolean}true"/>
+                            <styleClass
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Style class"
+                                fieldDescription="Optional. Use about-section for the reversed about layout."
+                                name="./styleClass"/>
+                        </items>
+                    </text>
+                    <actions
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Actions"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <button1Text
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Primary button label"
+                                name="./button1Text"/>
+                            <button1Path
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Primary button link"
+                                fieldDescription="Content path or URL. Anchor links such as /content/aakash-portfolio/home.html#projects are allowed."
+                                name="./button1Path"/>
+                            <button1Download
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Download file name"
+                                fieldDescription="When set, the primary button downloads the linked file instead of navigating."
+                                name="./button1Download"/>
+                            <button2Text
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Secondary button label"
+                                name="./button2Text"/>
+                            <button2Path
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Secondary button URL"
+                                name="./button2Path"/>
+                        </items>
+                    </actions>
+                    <image
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Image"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <imagePath
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                fieldLabel="Image"
+                                name="./imagePath"
+                                rootPath="/content/aakash-portfolio/assets"/>
+                        </items>
+                    </image>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

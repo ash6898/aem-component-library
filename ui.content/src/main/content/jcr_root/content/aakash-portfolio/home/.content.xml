@@ -3,15 +3,15 @@
           xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
           xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="sling:Page"
-    sling:resourceType="aakash-portfolio/components/page">
+    sling:resourceType="component-library/components/page">
     <jcr:content
         jcr:primaryType="nt:unstructured"
         jcr:title="Home"
-        sling:resourceType="aakash-portfolio/components/page">
-        
+        sling:resourceType="component-library/components/page">
+
         <header
             jcr:primaryType="nt:unstructured"
-            sling:resourceType="aakash-portfolio/components/header"
+            sling:resourceType="component-library/components/header"
             siteName="Aakash Portfolio"
             homePagePath="/content/aakash-portfolio/home.html">
             <navItems jcr:primaryType="nt:unstructured">
@@ -32,26 +32,25 @@
 
         <hero-banner
             jcr:primaryType="nt:unstructured"
-            sling:resourceType="aakash-portfolio/components/hero-banner"
-            jobTitle="AEM Developer"
-            name="Hello,  my name &lt;br&gt; is Aakash Baskaran"
-            description="I'm an AEM Developer with a slightly unusual background—I've built enterprise content solutions for Fortune 500 clients, coded Android apps for 100,000+ users, and nerded out over data analytics, which means I approach digital experiences with clean architecture, performance optimization, and a healthy obsession with metrics."
+            sling:resourceType="component-library/components/hero-banner"
+            jobTitle="Associate Software Developer"
+            name="Hello, my name &lt;br&gt; is Aakash Baskaran"
+            description="Nearly two years of industry experience: AEM 6.x at Accenture for Chubb Insurance, then Android development at Zoho. Preparing for the Adobe AD0-E123 certification (in progress)."
             button1Text="Projects"
             button2Text="LinkedIn"
             button1Path="/content/aakash-portfolio/home.html#projects"
             button2Path="https://www.linkedin.com/in/aakashbaskaran/"
             imagePath="/content/aakash-portfolio/assets/images/Illustration.png"/>
 
-                <about-title
+        <about-title
             jcr:primaryType="nt:unstructured"
-            sling:resourceType="aakash-portfolio/components/section-title"
+            sling:resourceType="component-library/components/section-title"
             title="About Me"/>
 
         <about-banner
             jcr:primaryType="nt:unstructured"
-            sling:resourceType="aakash-portfolio/components/hero-banner"
-            description="I'm someone who believes the best solutions come from diverse perspectives—which is why I've intentionally built expertise across enterprise content management, mobile development, and data analytics. I started as an AEM Developer at Accenture building solutions for Fortune 500 clients, then strengthened my component architecture skills developing Android apps for 100,000+ users at Zoho, before deepening my technical foundation with Canadian diplomas in Data Analytics and Big Data. Each experience wasn't a detour—it was deliberate: AEM taught me scalable architecture, mobile dev sharpened my design patterns, and analytics gave me the tools to measure and optimize impact.
-            &lt;br&gt;&lt;br&gt;Now I bring all three together, building AEM solutions that leverage mobile-grade component thinking and data-driven insights. Outside of work, I love strategic thinking (you'll find me playing chess), exploring great stories through movies, series, and anime, and planning to finally learn skating now that I'm in Canada. I'm based in Toronto, actively seeking AEM opportunities where curiosity and technical depth are valued. Let's connect and build something meaningful."
+            sling:resourceType="component-library/components/hero-banner"
+            description="From January to October 2021 I was an Associate Software Developer on the AEM Platform team at Accenture. The client was Chubb Insurance and the work was on AEM 6.x. I published and maintained 100+ pages, standardised reusable AEM component templates that reduced authoring time by about 30%, administered DAM workflows, and carried out cross-browser and WCAG 2.0 quality checks.&lt;br&gt;&lt;br&gt;From November 2021 to December 2022 I was an Android Developer at Zoho. That is nearly two years of industry experience in total. I am preparing for the Adobe AD0-E123 certification (in progress). This website is a personal learning project for HTL components and Sling Models."
             styleClass="about-section"
             button1Text="Resume"
             button1Path="/content/aakash-portfolio/assets/documents/Aakash_Baskaran_Resume.pdf"
@@ -60,55 +59,49 @@
 
         <projects-title
             jcr:primaryType="nt:unstructured"
-            sling:resourceType="aakash-portfolio/components/section-title"
+            sling:resourceType="component-library/components/section-title"
             title="Projects"/>
 
         <project1
             jcr:primaryType="nt:unstructured"
-            sling:resourceType="aakash-portfolio/components/project-card"
-            title="AEM Component Library Portfolio"
-            description="Description: Production-ready portfolio website built using Apache Sling framework to demonstrate enterprise AEM development patterns. Features reusable component architecture with Sling Models, HTL templating, and responsive design.&lt;br&gt;&lt;br&gt;
-            Technologies: Apache Sling • HTL • Sling Models • OSGi • JCR • Maven • JavaScript • CSS3&lt;br&gt;"
+            sling:resourceType="component-library/components/project-card"
+            title="AEM Component Library"
+            description="Personal learning project used while preparing for the Adobe AD0-E123 certification. Seven HTL components, Sling Models on the header, hero banner, project card, and footer, a client library, and a Maven build with core, ui.apps, and ui.content modules.&lt;br&gt;&lt;br&gt;Technologies in this repository: Java, HTL, Sling Models, Maven, CSS, and JavaScript.&lt;br&gt;"
             buttonText="View Project"
-            buttonPath="https://github.com/ash6898/aakash-portfolio"
+            buttonPath="https://github.com/ash6898/aem-component-library"
             imagePath="/content/aakash-portfolio/assets/images/project1_img.png"/>
 
         <project2
             jcr:primaryType="nt:unstructured"
-            sling:resourceType="aakash-portfolio/components/project-card"
-            title="Enterprise AEM Solutions - Chubb Insurance"
-            description="Developed custom AEM components and templates for Fortune 500 insurance client at Accenture. Built 15+ reusable components supporting multi-site management, reducing page authoring time by 30%.&lt;br&gt;&lt;br&gt;
-            Technologies: AEM 6.5 • Sling • OSGi • HTL • Touch UI • Java • JCR • REST APIs &lt;br&gt; &lt;br&gt;
-            Note: Proprietary code - Experience detailed on resume only.&lt;br&gt;"
-            buttonText="View Project"
-            buttonPath=""
+            sling:resourceType="component-library/components/project-card"
+            title="AEM Platform, Chubb Insurance"
+            description="Associate Software Developer (AEM Platform) at Accenture, January to October 2021. Client: Chubb Insurance, on AEM 6.x. Published and maintained 100+ pages, standardised reusable component templates that reduced authoring time by about 30%, administered DAM workflows, and completed cross-browser and WCAG 2.0 QA.&lt;br&gt;&lt;br&gt;Client code is proprietary and is not in this repository.&lt;br&gt;"
             imagePath="/content/aakash-portfolio/assets/images/project2_img.png"/>
 
         <project3
             jcr:primaryType="nt:unstructured"
-            sling:resourceType="aakash-portfolio/components/project-card"
-            title="Real-Time Communication App (Android)"
-            description="Native Android application serving 100,000+ active users with real-time communication features. Implemented Clean Architecture and MVVM patterns, reducing crash rates by 25%.&lt;br&gt;&lt;br&gt;
-            Technologies: Kotlin • Java • Jetpack Compose • WebRTC • MVVM • Room • Retrofit&lt;br&gt; &lt;br&gt;
-            Note: Proprietary code - Experience detailed on resume only.&lt;br&gt;"
-            buttonText="View Project"
-            buttonPath=""
+            sling:resourceType="component-library/components/project-card"
+            title="Android Development, Zoho"
+            description="Android Developer at Zoho from November 2021 to December 2022.&lt;br&gt;&lt;br&gt;Product code from that role is proprietary and is not in this repository.&lt;br&gt;"
             imagePath="/content/aakash-portfolio/assets/images/project3_img.png"/>
 
         <contact-title
             jcr:primaryType="nt:unstructured"
-            sling:resourceType="aakash-portfolio/components/section-title"
+            sling:resourceType="component-library/components/section-title"
             title="Contact Me"/>
 
         <contact-form
             jcr:primaryType="nt:unstructured"
-            sling:resourceType="aakash-portfolio/components/contact-form"
-        />
+            sling:resourceType="component-library/components/contact-form"
+            formAction="https://formspree.io/f/mdaloaae"
+            submitLabel="Send"
+            successTitle="Thank you!"
+            successText="Your message has been sent. I'll get back to you soon."/>
 
         <footer
             jcr:primaryType="nt:unstructured"
-            sling:resourceType="aakash-portfolio/components/footer"
-            footerText="© 2024 Aakash Portfolio">
+            sling:resourceType="component-library/components/footer"
+            footerText="© 2026 Aakash Portfolio">
             <navItems jcr:primaryType="nt:unstructured">
                 <item1
                     jcr:primaryType="nt:unstructured"
