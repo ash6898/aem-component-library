@@ -13,4 +13,6 @@
         jcr:primaryType="nt:file"/>
     <section-title.css
         jcr:primaryType="nt:file"/>
+    <contact-form.css
+        jcr:primaryType="nt:file"/>
 </jcr:root>

@@ -1,24 +1,23 @@
 <div class="hero-banner-container ${heroBanner.styleClass}" data-sly-use.heroBanner="com.aakash.portfolio.core.models.HeroBannerModel">
-  <link rel="stylesheet" href="/apps/aakash-portfolio/clientlibs/clientlib-site/css/hero.css" />
   <div class="hero-banner-content">
     <h2>${heroBanner.jobTitle}</h2>
     <h1>${heroBanner.name @ context='html'}</h1>
     <p>${heroBanner.description @ context='html'}</p>
-    <a data-sly-test="${heroBanner.button1Text && !heroBanner.button1Download}" 
-      href="${heroBanner.button1Path}" 
+    <a data-sly-test="${heroBanner.button1Text && !heroBanner.button1Download}"
+      href="${heroBanner.button1Path}"
       class="btn" id="button1">${heroBanner.button1Text}</a>
 
-    <a data-sly-test="${heroBanner.button1Text && heroBanner.button1Download}" 
-      href="${heroBanner.button1Path}" 
+    <a data-sly-test="${heroBanner.button1Text && heroBanner.button1Download}"
+      href="${heroBanner.button1Path}"
       class="btn" id="button1"
-      download="${heroBanner.button1Download}">${heroBanner.button1Text}</a>    
-    
-    <a data-sly-test="${heroBanner.button2Text}" 
+      download="${heroBanner.button1Download}">${heroBanner.button1Text}</a>
+
+    <a data-sly-test="${heroBanner.button2Text}"
       href="${heroBanner.button2Path}"
       class="btn" id="button2" target="_blank"
       rel="noopener noreferrer">${heroBanner.button2Text}</a>
   </div>
-  <div class="hero-banner-image" style="background-image: url(${heroBanner.imagePath @ context='unsafe'})" role="img"
+  <div class="hero-banner-image" style="background-image: url('${heroBanner.imagePath @ context='uri'}');" role="img"
     aria-label="Hero Image">
   </div>
 </div>

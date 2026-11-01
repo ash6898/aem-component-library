@@ -1,14 +1,15 @@
 package com.aakash.portfolio.core.models;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
 
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
-import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
+import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
@@ -22,46 +23,34 @@ public class FooterModel {
     @ValueMapValue
     private String footerText;
 
-    @ValueMapValue
-    private String itemLabel;
-
-    @ValueMapValue
-    private String itemPath;
-
-    @ValueMapValue
-    private String itemIconPath;
-
-    private List<NavItem> navItemList;
+    private List<NavItem> navItemList = Collections.emptyList();
 
     @PostConstruct
     protected void init() {
         navItemList = new ArrayList<>();
-        if (resource != null) {
-            Resource navItems = resource.getChild("navItems");
-            if (navItems != null) {
-                for (Resource child : navItems.getChildren()) {
-                    String label = child.getValueMap().get("label", String.class);
-                    String path = child.getValueMap().get("path", String.class);
-                    String iconPath = child.getValueMap().get("iconPath", String.class);
-                    if (label != null && path != null) {
-                        navItemList.add(new NavItem(label, path, iconPath));
-                    }
-                }
+        if (resource == null) {
+            return;
+        }
+        Resource navItems = resource.getChild("navItems");
+        if (navItems == null) {
+            return;
+        }
+        for (Resource child : navItems.getChildren()) {
+            String label = child.getValueMap().get("label", String.class);
+            String path = child.getValueMap().get("path", String.class);
+            String iconPath = child.getValueMap().get("iconPath", String.class);
+            if (label != null && path != null) {
+                navItemList.add(new NavItem(label, path, iconPath));
             }
         }
     }
 
-    // Getters
-    public String getItemLabel() {
-        return itemLabel;
-    }
-
     public String getFooterText() {
-        return footerText != null ? footerText : "© 2026 Default Text.";
+        return footerText != null ? footerText : "© 2026 Aakash Portfolio";
     }
 
     public List<NavItem> getNavItems() {
-        return navItemList;
+        return navItemList != null ? navItemList : Collections.emptyList();
     }
 
     public static class NavItem {

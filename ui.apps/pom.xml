@@ -16,19 +16,77 @@
     <packaging>content-package</packaging>
 
     <name>AEM Component Library - UI Apps</name>
+    <description>Components, dialogs, and client libraries installed under /apps/component-library</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.aem.component.library</groupId>
+            <artifactId>aem-component-library.core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.jackrabbit</groupId>
                 <artifactId>filevault-package-maven-plugin</artifactId>
-                <version>1.1.6</version>
                 <extensions>true</extensions>
                 <configuration>
+                    <group>com.aakash.portfolio</group>
+                    <name>aem-component-library.ui.apps</name>
+                    <!-- mixed: components and client libraries plus the embedded OSGi bundle.
+                         application packages are not allowed to carry bundles. -->
+                    <packageType>mixed</packageType>
+                    <accessControlHandling>merge_preserve</accessControlHandling>
+                    <jcrRootSourceDirectory>${basedir}/src/main/content/jcr_root</jcrRootSourceDirectory>
+                    <metaInfVaultDirectory>${basedir}/src/main/content/META-INF/vault</metaInfVaultDirectory>
                     <filterSource>${basedir}/src/main/content/META-INF/vault/filter.xml</filterSource>
-                    <acHandling>merge_preserve</acHandling>
+                    <embeddeds>
+                        <embedded>
+                            <groupId>com.aem.component.library</groupId>
+                            <artifactId>aem-component-library.core</artifactId>
+                            <target>/apps/component-library/install</target>
+                        </embedded>
+                    </embeddeds>
+                    <!-- cq:Component and cq:ClientLibraryFolder are AEM node types.
+                         They are not in the Jackrabbit set, and the Adobe uber-jar is not
+                         on Maven Central, so node-type validation cannot be strict here. -->
+                    <validatorsSettings>
+                        <jackrabbit-nodetypes>
+                            <isDisabled>true</isDisabled>
+                        </jackrabbit-nodetypes>
+                    </validatorsSettings>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>autoInstallPackage</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.jackrabbit</groupId>
+                        <artifactId>filevault-package-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>install-package</id>
+                                <goals>
+                                    <goal>install</goal>
+                                </goals>
+                                <configuration>
+                                    <targetURL>http://${aem.host}:${aem.port}/crx/packmgr/service.jsp</targetURL>
+                                    <userId>${vault.user}</userId>
+                                    <password>${vault.password}</password>
+                                    <failOnError>true</failOnError>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
